@@ -68,7 +68,7 @@ Color TintFromDarkness(float darkness, Color base)
     float f = 1.0f - strength * darkness; // clamps to [0..1]
     if (f < 0.0f) f = 0.0f; else if (f > 1.0f) f = 1.0f;
 
-    return (Color){
+    return Color{
         (unsigned char)(base.r * f),
         (unsigned char)(base.g * f),
         (unsigned char)(base.b * f),

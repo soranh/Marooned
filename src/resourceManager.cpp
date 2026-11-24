@@ -319,7 +319,7 @@ void ResourceManager::UnloadAllFonts()
 
 
 void ResourceManager::LoadAllResources() {
-    Vector2 screenResolution = (Vector2){ (float)GetScreenWidth(), (float)GetScreenHeight() };
+    Vector2 screenResolution = Vector2{ (float)GetScreenWidth(), (float)GetScreenHeight() };
 
     // ResourceManager init once
 

@@ -191,7 +191,7 @@ void CloseDoor(int doorIndex, bool eventLock)
 }
 
 Vector3 ColorToNormalized(Color color) {
-    return (Vector3){
+    return Vector3{
         color.r / 255.0f,
         color.g / 255.0f,
         color.b / 255.0f
@@ -1923,8 +1923,8 @@ void GenerateHarpoon(float baseY){
 static BoundingBox MakeBoxCentered(Vector3 p, Vector3 half)
 {
     BoundingBox b;
-    b.min = (Vector3){ p.x - half.x, p.y - half.y, p.z - half.z };
-    b.max = (Vector3){ p.x + half.x, p.y + half.y, p.z + half.z };
+    b.min = Vector3{ p.x - half.x, p.y - half.y, p.z - half.z };
+    b.max = Vector3{ p.x + half.x, p.y + half.y, p.z + half.z };
     return b;
 }
 
@@ -3335,8 +3335,8 @@ void DrawFlatDoor(Texture2D tex,
     // Build quad from hinge corner + openOffset
     Vector3 bottomLeft  = Vector3Add(hingeBL, openOffset);
     Vector3 bottomRight = Vector3Add(bottomLeft, Vector3Scale(right, w));
-    Vector3 topLeft     = Vector3Add(bottomLeft, (Vector3){0, h, 0});
-    Vector3 topRight    = Vector3Add(bottomRight,(Vector3){0, h, 0});
+    Vector3 topLeft     = Vector3Add(bottomLeft, Vector3{0, h, 0});
+    Vector3 topRight    = Vector3Add(bottomRight,Vector3{0, h, 0});
 
 
     BeginBlendMode(BLEND_ALPHA);
@@ -3398,7 +3398,7 @@ void UpdateChestTints(Vector3 playerPos) {
         float dist = Vector3Distance(playerPos, chest.position);
         float brightness = Clamp(1.0f - (dist / maxLightDistance), minBrightness, 1.0f);
         Vector3 tinted = Vector3Scale(warmchestColor, brightness);
-        chest.tint = ColorFromNormalized((Vector4){ tinted.x, tinted.y, tinted.z, 1.0f });
+        chest.tint = ColorFromNormalized(Vector4{ tinted.x, tinted.y, tinted.z, 1.0f });
     }
 }
 
@@ -3413,7 +3413,7 @@ void UpdateBarrelTints(Vector3 playerPos) {
         float dist = Vector3Distance(playerPos, barrel.position);
         float brightness = Clamp(1.0f - (dist / maxLightDistance), minBrightness, 1.0f);
         Vector3 tinted = Vector3Scale(warmbarrelColor, brightness);
-        barrel.tint = ColorFromNormalized((Vector4){ tinted.x, tinted.y, tinted.z, 1.0f });
+        barrel.tint = ColorFromNormalized(Vector4{ tinted.x, tinted.y, tinted.z, 1.0f });
     }
 }
 
@@ -3428,7 +3428,7 @@ void UpdateDoorTints(Vector3 playerPos) {
         float dist = Vector3Distance(playerPos, door.position);
         float brightness = Clamp(1.0f - (dist / maxLightDistance), minBrightness, 1.0f);
         Vector3 tinted = Vector3Scale(baseDoorColor, brightness);
-        door.tint = ColorFromNormalized((Vector4){ tinted.x, tinted.y, tinted.z, 1.0f });
+        door.tint = ColorFromNormalized(Vector4{ tinted.x, tinted.y, tinted.z, 1.0f });
     }
 }
 

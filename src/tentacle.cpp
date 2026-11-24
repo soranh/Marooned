@@ -39,7 +39,7 @@ void Tentacle::SolveChain()
         else
         {
             // fallback if two joints somehow overlap exactly
-            joints[i] = (Vector3){ next.x, next.y - segmentLength, next.z };
+            joints[i] = Vector3{ next.x, next.y - segmentLength, next.z };
         }
     }
 
@@ -66,7 +66,7 @@ void Tentacle::SolveChain()
         }
         else
         {
-            joints[i] = (Vector3){ prev.x, prev.y + segmentLength, prev.z };
+            joints[i] = Vector3{ prev.x, prev.y + segmentLength, prev.z };
         }
     }
 }

@@ -884,7 +884,7 @@ bool SingleRayBlocked(Vector2 start, Vector2 end, const Image& dungeonMap, int m
             return true;
 
         // Early out: if close enough to the end
-        if (Vector2Distance((Vector2){x, y}, end) < epsilon) {
+        if (Vector2Distance(Vector2{x, y}, end) < epsilon) {
             return false;
         }
 

@@ -821,13 +821,13 @@ void WeaponBar::Draw(WeaponType activeWeapon) const
             slotSize
         };
 
-        DrawRectangleRec(box, (Color){20, 20, 20, 180});
+        DrawRectangleRec(box, Color{20, 20, 20, 180});
         DrawRectangleLinesEx(box, 2, isActive ? GOLD : DARKGRAY);
 
         // locked?
         if (slot.unlocked && !(*slot.unlocked))
         {
-            DrawRectangleRec(box, (Color){0,0,0,160});
+            DrawRectangleRec(box, Color{0,0,0,160});
             continue;
         }
 

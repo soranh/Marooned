@@ -372,7 +372,7 @@ void StampLight_StaticBase_Subtile2x2_ToBuffer_Clipped(std::vector<Color>& outBu
 {
 
     if ((int)outBuf.size() != bufW * bufH)
-        outBuf.assign((size_t)bufW * bufH, (Color){0,0,0,255});
+        outBuf.assign((size_t)bufW * bufH, Color{0,0,0,255});
 
     // Clamp clip to buffer (defensive)
     RectI clipC = clip;
@@ -1064,14 +1064,14 @@ void InitWallDynamicLightmap(int res)
     gWallDynamic.w = res;
     gWallDynamic.h = res;
 
-    gStaticBase.assign((size_t)gWallDynamic.w * gWallDynamic.h, (Color){0,0,0,255});
+    gStaticBase.assign((size_t)gWallDynamic.w * gWallDynamic.h, Color{0,0,0,255});
 
     // World-space mapping for this level (XZ bounds)
     ComputeDungeonXZBounds(dungeonWidth, dungeonHeight, tileSize, floorHeight,
                            gWallDynamic.minX, gWallDynamic.minZ, gWallDynamic.sizeX, gWallDynamic.sizeZ);
 
     // CPU buffer (black = no light)
-    gWallDynamic.pixels.assign(gWallDynamic.w * gWallDynamic.h, (Color){0,0,0,255});
+    gWallDynamic.pixels.assign(gWallDynamic.w * gWallDynamic.h, Color{0,0,0,255});
 
     // GPU texture
     Image img = GenImageColor(gWallDynamic.w, gWallDynamic.h, BLACK);
@@ -1103,14 +1103,14 @@ void InitDynamicLightmap(int res)
     gDynamic.w = res;
     gDynamic.h = res;
 
-    gStaticBase.assign((size_t)gDynamic.w * gDynamic.h, (Color){0,0,0,255});
+    gStaticBase.assign((size_t)gDynamic.w * gDynamic.h, Color{0,0,0,255});
 
     // World-space mapping for this level (XZ bounds)
     ComputeDungeonXZBounds(dungeonWidth, dungeonHeight, tileSize, floorHeight,
                            gDynamic.minX, gDynamic.minZ, gDynamic.sizeX, gDynamic.sizeZ);
 
     // CPU buffer (black = no light)
-    gDynamic.pixels.assign(gDynamic.w * gDynamic.h, (Color){0,0,0,255});
+    gDynamic.pixels.assign(gDynamic.w * gDynamic.h, Color{0,0,0,255});
 
     // GPU texture
     Image img = GenImageColor(gDynamic.w, gDynamic.h, BLACK);

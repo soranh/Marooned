@@ -1,0 +1,14 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "name": "Marooned (Debug)",
+      "project": "CMakeLists.txt",
+      "projectTarget": "Marooned.exe",
+      "configuration": "Debug",
+      "args": [],
+      "currentDir": "${workspaceRoot}"
+    }
+  ]
+}
